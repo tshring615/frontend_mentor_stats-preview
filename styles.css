@@ -1,0 +1,128 @@
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Kanit:wght@400;700&display=swap');
+
+:root {
+    --bgColor: hsl(233, 47%, 7%);
+    --card-bgColor: hsl(244, 38%, 16%);
+    --accentColor: hsl(277, 64%, 61%);
+    --headingColor: hsl(0, 0%, 100%);
+    --paragraphColor:  hsla(0, 0%, 100%, 0.75);
+    --statColor: hsla(0, 0%, 100%, 0.6);
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: 'Kanit', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bgColor);
+    min-height: 100vh;
+}
+
+main {
+    background-color: var(--card-bgColor);
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 80%;
+}
+
+.image-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -5px;
+    left: 0px;
+    background-color: purple;
+    opacity: 60%;
+}
+
+
+
+
+h1, h2 {
+    color: var(--headingColor);
+    font-size: 2.5rem;
+    font-family: 'Inter', sans-serif;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+p {
+    color: var(--paragraphColor);
+    font-size: 1.25rem;
+}
+
+.content {
+    margin: 5rem 3rem;
+}
+
+span {
+    color: var(--accentColor);
+}
+
+.content > P {
+    margin: 2rem 0;
+}
+
+.stats {
+    margin-top: 2rem;
+}
+
+.stats h2 {
+    text-transform: uppercase;
+}
+
+.stats  p {
+    color: var(--statColor);
+    text-transform: uppercase;
+}
+
+@media (min-width: 1240px) {
+    body {
+        text-align: left;
+    }
+   main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-height: 500px;
+    max-width: 1400px;
+   }
+
+   .content {
+    order: -1;
+   }
+
+   .stats-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+   }
+
+}
